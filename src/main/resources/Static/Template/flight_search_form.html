@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flight Search Form</title>
+    <!-- Link to Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Your custom styles -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="bg-dark text-white p-4">
+    <div class="container">
+        <h1 class="text-center">Flight Booking</h1>
+    </div>
+</header>
+<main class="container mt-4">
+    <form action="/flight/search" method="post">
+        <div class="form-group">
+            <label for="departure">Departure Airport:</label>
+            <input type="text" class="form-control" id="departure" name="departure" required>
+        </div>
+        <div class="form-group">
+            <label for="destination">Destination Airport:</label>
+            <input type="text" class="form-control" id="destination" name="destination" required>
+        </div>
+        <div class="form-group">
+            <label for="dates">Dates:</label>
+            <input type="text" class="form-control" id="dates" name="dates" placeholder="MM/DD/YYYY" required>
+        </div>
+        <div class="form-group">
+            <label for="passengers">Passengers:</label>
+            <input type="number" class="form-control" id="passengers" name="passengers" min="1" required>
+        </div>
+        <div class="form-group form-check">
+            <input type="checkbox" class="form-check-input" id="roundTrip" name="roundTrip">
+            <label class="form-check-label" for="roundTrip">Round Trip</label>
+        </div>
+        <button type="submit" class="btn btn-primary" onclick="window.location.href = 'Flight_results.html';">Search Flights</button>
+    </form>
+</main>
+<footer class="bg-dark text-white p-3 mt-4">
+    <div class="container">
+        <p class="text-center">&copy; 2024 Flight Booking App</p>
+    </div>
+</footer>
+<!-- Link to Bootstrap JavaScript -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
