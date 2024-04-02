@@ -4,20 +4,22 @@ import com.airline.Model.Booking;
 import com.airline.Model.Flight;
 import com.airline.service.Flightservice;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.SpringBootApplication; // Import the necessary annotation
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@SpringBootApplication // Add @SpringBootApplication annotation
 @Controller
 @RequestMapping("/flight")
-public class flightcontroller {
+public class mainClass {
 
     private final Flightservice flightService;
 
     @Autowired
-    public flightcontroller(Flightservice flightService) {
+    public mainClass(Flightservice flightService) {
         this.flightService = flightService;
     }
 
