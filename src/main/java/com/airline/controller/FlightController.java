@@ -14,18 +14,18 @@ import java.util.List;
 @SpringBootApplication // Add @SpringBootApplication annotation
 @Controller
 @RequestMapping("/flight")
-public class mainClass {
+public class FlightController {
 
     private final Flightservice flightService;
 
     @Autowired
-    public mainClass(Flightservice flightService) {
+    public FlightController(Flightservice flightService) {
         this.flightService = flightService;
     }
 
     @GetMapping("/weekly-direct-flights")
-    public String showWeeklyDirectFlights(Model model) {
-        List<Flight> weeklyDirectFlights = flightService.getWeeklyDirectFlights();
+    public static String showWeeklyDirectFlights(Model model) {
+        List<Flight> weeklyDirectFlights = Flightservice.getWeeklyDirectFlights();
         model.addAttribute("flights", weeklyDirectFlights);
         return "weekly_direct_flights"; // Assuming weekly_direct_flights is the name of the Thymeleaf template
     }
@@ -36,13 +36,13 @@ public class mainClass {
     }
 
     @PostMapping("/search")
-    public String searchFlights(@RequestParam("departure") String departure,
-                                @RequestParam("destination") String destination,
-                                @RequestParam("dates") String dates,
-                                @RequestParam("passengers") int passengers,
-                                @RequestParam("isRoundTrip") boolean isRoundTrip,
-                                Model model) {
-        List<Flight> flights = flightService.searchFlights(departure, destination, dates, passengers, isRoundTrip);
+    public static String searchFlights(@RequestParam("departure") String departure,
+                                       @RequestParam("destination") String destination,
+                                       @RequestParam("dates") String dates,
+                                       @RequestParam("passengers") int passengers,
+                                       @RequestParam("isRoundTrip") boolean isRoundTrip,
+                                       Model model) {
+        List<Flight> flights = Flightservice.searchFlights(departure, destination, dates, passengers, isRoundTrip);
         model.addAttribute("flights", flights);
         return "flight_results";
     }

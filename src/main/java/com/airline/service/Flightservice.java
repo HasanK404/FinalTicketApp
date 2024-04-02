@@ -8,7 +8,7 @@ import java.util.List;
 public class Flightservice {
 
     // Method to search for available flights based on user input criteria
-    public List<Flight> searchFlights(String departure, String destination, String date, int passengers, boolean isRoundTrip) {
+    public static List<Flight> searchFlights(String departure, String destination, String date, int passengers, boolean isRoundTrip) {
         // Get sample flights from the Flight class
         Flight[] sampleFlights = Flight.getSampleFlights();
 
@@ -17,7 +17,7 @@ public class Flightservice {
         return List.of(sampleFlights);
     }
     // Method to retrieve a list of available weekly direct flights
-    public List<Flight> getWeeklyDirectFlights() {
+    public static List<Flight> getWeeklyDirectFlights() {
         // Implement logic to fetch weekly direct flights from a data source
         // For now, returning sample flights for testing purposes
         return List.of(Flight.getSampleFlights());
